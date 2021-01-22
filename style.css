@@ -49,8 +49,8 @@ header{
 }
 
 .navbar ul{
-    flex: 1;
     text-align: right;
+    display: flex;
 }
 
 .navbar ul li {
@@ -159,6 +159,23 @@ header{
     background: var(--gradient-1);
 }
 
+.grid-box-mobileapp img{
+    width: 200px;
+    height: 200px;
+}
+.grid-box-webdesign img{
+    width: 200px;
+    height: 200px;
+}
+.grid-box-marketing img{
+    width: 200px;
+    height: 200px;
+}
+.grid-box-branding img{
+    width: 200px;
+    height: 200px;
+}
+
 .webdesing{
     background: var(--gradient-2);
     margin-top: 30px;
@@ -223,7 +240,10 @@ header{
 }
 
 .hpyclients{
-    background: var(--gradient-1);
+    background: url("./images/SovaPAK.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .prjcompleted{
@@ -279,8 +299,11 @@ header{
 }
 
 .prj-img img{
-    max-height: 100%;
-    min-width: 100%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    /* transform: translateX(-50px); */
 }
 
 .details{
@@ -365,7 +388,6 @@ header{
 }  
 
 .theme{
-    position: absolute;
     top: 30px;
     left: 40%;
 }
@@ -373,7 +395,7 @@ header{
 .label{
     width: 50px;
     height: 20px;
-    background: rgb(255, 255, 255);
+    background: rgb(141, 78, 78);
     display: flex;
     align-items: center;
     border-radius: 50px;
@@ -442,6 +464,121 @@ body.dark a{
         transform: scale(1.2);
     }
 }
+
+@media (max-width:768px){
+    .logo{
+        width: 40px;
+    }
+
+    header{
+        min-height: 0;
+    }
+
+    .navbar{
+        padding: 10px;
+    }
+
+    .navbar + .row {
+        padding-top: 0;
+    }
+
+    .header-content{
+        flex-basis: 100%;
+        padding: 1rem;
+    }
+
+    .header-content h1 {
+        margin-top: 4rem;
+    }
+
+    .services{
+        margin-top: 0;
+    }
+
+    .services .container{
+        justify-content: center;
+    }
+
+    .services .container .grid-wrapper{
+        text-align: center;
+    }
+
+
+    .services-content{
+        padding: 0;
+        margin-top: 30px;
+        flex-basis: 100%;
+    }
+
+    .services-content p {
+        padding: 0;
+    }
+
+    .circle{
+        display: none;
+    }
+
+    .numbers{
+        margin-top: 30px;
+    }
+
+    .numbers p{
+        padding: 1rem;
+    }
+
+    .projects{
+        margin-top: 0;
+    }
+    .projects h1{
+        margin: 1rem;
+    }
+
+    .numbers .num-text{
+        padding: 1rem;
+    }
+
+    .mockup-img{
+        flex-basis: 100%;
+    }
+
+    .mockup-img img{
+        margin-left: 0;
+    }
+
+    .container {
+        padding: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .grid-wrapper-2{
+        padding: 2rem 0 2rem 3rem;
+    }
+
+    .prj-img img {
+        width: 75%;
+        height: 75%;
+    }
+
+    .projects-images{
+        padding: 1rem;
+    }
+
+    .navbar .nav-list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 70%;
+        margin-left: auto;
+    }
+
+    .navbar .nav-list li{
+        margin: 0;
+    }
+    .navbar .nav-list li a {
+        font-size: 12px;
+    }
+}
+
 
 
 
