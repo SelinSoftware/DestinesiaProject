@@ -36,31 +36,56 @@ body a{
 header{
     background-image: url("./images/ana.png");
     background-repeat: no-repeat;
+    /* background-size: cover; */
+    /* //cover tam yerleştiriyor, resmin tamamı olsun contain, max-width:100%,width*/   
     min-height: 100vh;
 }
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn-open-menu{
+    background-color:#282f59;
+    border: 0;
+    color: wheat;
+    font-size: 20px;
+    display: none;
+    cursor: pointer;
+    outline: none;
+}
+
 .navbar{
     position: absolute;
     top: 0;
     left: 0;
     display: flex;
     width: 100%;
-    padding: 10px 50px;
+    height: 64px;
+    padding: 0 1rem;
     align-items: center;
+    font-weight: 900;
 }
 
-.navbar ul{
-    text-align: right;
+.navbar .nav-list {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 57%;
+    margin-left: auto;
 }
 
-.navbar ul li {
+.navbar .nav-list li{
+    margin: 0;
     list-style: none;
     display: inline-block;
-    margin: 0 25px;
 }
+
 
 .logo{ 
     width: 180px;
+    padding-top: 3rem;
 }
 
 .ctn{
@@ -247,15 +272,24 @@ header{
 }
 
 .prjcompleted{
-    background: var(--gradient-2);
+    background: url("./images/DinamikLOGO.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .runningprj{
-    background: var(--gradient-3);
+    background: url("./images/YasoLOGO.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .designs{
-    background: var(--gradient-4);
+    background: url("./images/ÇabukHukukLOGO.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .numbers .grid-box h2{
@@ -296,6 +330,7 @@ header{
     height: 300px;
     overflow: hidden;
     position: relative;
+    border: 1px solid #009efd;
 }
 
 .prj-img img{
@@ -377,7 +412,7 @@ header{
 
 #scrolltop{
     color: white;
-    background: tomato;
+    background: rgb(107, 41, 30);
     padding: 15px;
     border-radius: 50%;
     position: fixed;
@@ -395,7 +430,7 @@ header{
 .label{
     width: 50px;
     height: 20px;
-    background: rgb(141, 78, 78);
+    background: rgb(131, 119, 119);
     display: flex;
     align-items: center;
     border-radius: 50px;
@@ -405,7 +440,7 @@ header{
 .label .ball{
     width: 15px;
     height: 15px;
-    background: #282f59;
+    background: #8995da;
     border-radius: 50%;
     margin: 5px;
     transition: transform 0.5s;
@@ -417,10 +452,10 @@ header{
 }
 
 .checkbox:checked ~ .label{
-    background: #282f59 ;
+    background: wheat ;
 }
 .checkbox:checked ~ .label .ball{
-    background-color: white;
+    background-color: #282f59;
     transform: translateX(25px);
 }
 
@@ -452,6 +487,10 @@ body.dark a{
     color: whitesmoke;
 }
 
+body.dark .logo{
+    filter: invert(1);
+}
+
 
 @keyframes scaleup{
     0%{
@@ -465,9 +504,76 @@ body.dark a{
     }
 }
 
+.responsive-theme{
+    display: flex;
+    align-items: center;
+    width: 5rem;
+    justify-content: space-between;
+    display: none;
+}
+
+.responsive-menu{
+    width: 100%;
+    height: 50%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #8995da;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    transform: translateY(-110%);
+    transition: 300ms all ease;
+}
+
+.close-responsive-menu{
+    font-size: 30px;
+    position: fixed;
+    top: .5rem;
+    right: .5rem;
+    font-weight: 700;
+    z-index: 4;
+    display: none;
+    cursor: pointer;
+}
+
+.responsive-menu.show{
+    transform: translateY(0);
+}
+
+.backdrop{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .7);
+    z-index: 2;
+    display: none;
+}
+
+.responsive-menu .responsive-nav-list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
 @media (max-width:768px){
+    .responsive-theme{
+        display: flex;
+    }
+
+    input.checkbox{
+        width: 50px;
+        height: 20px;
+    }
+
     .logo{
-        width: 40px;
+        width: 100px;
+        padding-top: 1rem;
     }
 
     header{
@@ -563,20 +669,19 @@ body.dark a{
         padding: 1rem;
     }
 
-    .navbar .nav-list {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 70%;
-        margin-left: auto;
+    .navbar .nav-list{
+        display: none;
+        width: 100%;
     }
 
-    .navbar .nav-list li{
-        margin: 0;
-    }
     .navbar .nav-list li a {
         font-size: 12px;
+    } 
+
+    .btn-open-menu{
+        display: block;
     }
+    
 }
 
 
